@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='style.css' rel='stylesheet'>
+    <script defer src='game.js'></script>
+    <title>Learn First Order Logic!</title>
+</head>
+<body>
+    <div id='turnInstruction' class='hide'>Your Turn</div>
+    <div id='container' class='hide'>
+        <!-- FOR ALL &#8704 -->
+        <!-- THERE EXISTS &#8707 -->
+        <!-- AND &#8743 -->
+        <!-- OR &#8744 -->
+        <!-- NOT &#172 --> <!--easy levels are tutorials, will remain unlocked/ medium leveks are games, will be locked-->
+        <div id='question1' class='hide'>SQUARE &#8743 BLUE</div>
+        <div id='question2' class='hide'>SQUARE &#8744 BLUE</div>
+        <div id='question3' class='hide'>&#172 SQUARE</div>
+        <div id='question3-b' class='hide'>&#172 &#172 SQUARE</div>
+        <div id='question4' class='hide'>&#172 (TRIANGLE &#8744 BLUE)</div>
+        <div id='question4-b' class='hide'>&#172 TRIANGLE &#8743 &#172 BLUE</div>
+        <div id='question4-c' class='hide'>&#172 (SQUARE &#8743 GREEN)</div>
+        <div id='question4-d' class='hide'>&#172 SQUARE &#8744 &#172 GREEN</div>
+        <div id='question5' class='hide'>True or False?: &#8704x. SQUARE(x)</div>
+        <div id='question6' class='hide'>True or False?: &#8707x. TRIANGLE(x)</div>
+        <div id='question' class='hide'>&#8704x. SQUARE(x) &#8744 RED(x)</div>
+        <div id='question-a' class='hide'><span style='color:red;'>&#8704</span>x. SQUARE(x) &#8744 RED(x)</div>
+        <div id='question-b' class='hide'>&#8704<span style='color:red;'>x</span>. SQUARE(<span style='color:red;'>x</span>) &#8744 RED(<span style='color:red;'>x</span>)</div>
+        <div id='question-c' class='hide'>&#8704<span style='color:red;'>1</span>. SQUARE(<span style='color:red;'>1</span>) &#8744 RED(<span style='color:red;'>1</span>)</div>
+        <div id='question-d' class='hide'>SQUARE(1) <span style='color:green;'>&#8744</span> RED(1)</div>
+        <div id='question8' class='hide'>&#8707x. TRIANGLE(x) &#8743 RED(x)</div>
+        <div id='question8-a' class='hide'><span style='color:green;'>&#8707</span>x. TRIANGLE(x) &#8743 RED(x)</div>
+        <div id='question8-b' class='hide'>&#8707<span style='color:green;'>x</span>. TRIANGLE(<span style='color:green;'>x</span>) &#8743 RED(<span style='color:green;'>x</span>)</div>
+        <div id='question8-c' class='hide'>&#8707<span style='color:green;'>2</span>. TRIANGLE(<span style='color:green;'>2</span>) &#8743 RED(<span style='color:green;'>2</span>)</div>
+        <div id='question8-c-opt1' class='hide'>&#8707<span style='color:green;'>1</span>. TRIANGLE(<span style='color:green;'>1</span>) &#8743 RED(<span style='color:green;'>1</span>)</div>
+        <div id='question8-c-opt3' class='hide'>&#8707<span style='color:green;'>3</span>. TRIANGLE(<span style='color:green;'>3</span>) &#8743 RED(<span style='color:green;'>3</span>)</div>
+        <div id='question8-d' class='hide'>TRIANGLE(2) <span style='color:red;'>&#8743</span> RED(2)</div>
+        <div id='question8-d-opt1' class='hide'>TRIANGLE(1) <span style='color:red;'>&#8743</span> RED(1)</div>
+        <div id='question8-d-opt3' class='hide'>TRIANGLE(3) <span style='color:red;'>&#8743</span> RED(3)</div>
+        <div id='question8-e' class='hide'><span style='color:red;'>TRIANGLE(2)</span></div>
+        <div id='question8-e-opt1' class='hide'><span style='color:red;'>TRIANGLE(1)</span></div>
+        <div id='question8-e-opt3' class='hide'><span style='color:red;'>TRIANGLE(3)</span></div>
+        <div id='question9' class='hide'>&#172 &#8704x. SQUARE(x)</div>
+        <div id='question9-b' class='hide'>&#8707x. &#172 SQUARE(x)</div>
+        <div id='question11' class='hide'>&#172 &#8707x. TRIANGLE(x)</div>
+        <div id='question11-b' class='hide'>&#8704x. &#172 TRIANGLE(x)</div>
+        <div id='question10' class='hide'>&#172 &#8704x.(SQUARE(x) &#8744 GREEN(x))</div>
+        <div id='question10-b' class='hide'>&#8707x.&#172(SQUARE(x) &#8744 GREEN(x))</div>
+        <div id='question10-c' class='hide'>&#8707x.(&#172SQUARE(x) &#8743 &#172GREEN(x))</div>
+        <div id='question10-d' class='hide'><span style='color:green;'>&#8707</span>x.(&#172SQUARE(x) &#8743 &#172GREEN(x))</div>
+        <div id='question10-e' class='hide'>&#8707<span style='color:green;'>x</span>.(&#172SQUARE(<span style='color:green;'>x</span>) &#8743 &#172GREEN(<span style='color:green;'>x</span>))</div>
+        <div id='question10-f' class='hide'>&#8707<span style='color:green;'>2</span>.(&#172SQUARE(<span style='color:green;'>2</span>) &#8743 &#172GREEN(<span style='color:green;'>2</span>))</div>
+        <div id='question10-f-opt1' class='hide'>&#8707<span style='color:green;'>1</span>.(&#172SQUARE(<span style='color:green;'>1</span>) &#8743 &#172GREEN(<span style='color:green;'>1</span>))</div>
+        <div id='question10-f-opt3' class='hide'>&#8707<span style='color:green;'>3</span>.(&#172SQUARE(<span style='color:green;'>3</span>) &#8743 &#172GREEN(<span style='color:green;'>3</span>))</div>
+        <div id='question10-g' class='hide'>&#172SQUARE(2) <span style='color:red;'>&#8743</span> &#172GREEN(2)</div>
+        <div id='question10-g-opt1' class='hide'>&#172SQUARE(1) <span style='color:red;'>&#8743</span> &#172GREEN(1)</div>
+        <div id='question10-g-opt3' class='hide'>&#172SQUARE(3) <span style='color:red;'>&#8743</span> &#172GREEN(3)</div>
+        <div id='question10-h' class='hide'><span style='color:red;'>&#172SQUARE(2)</span></div>
+        <div id='question10-h-opt1' class='hide'><span style='color:red;'>&#172SQUARE(1)</span></div>
+        <div id='question10-h-opt3' class='hide'><span style='color:red;'>&#172SQUARE(3)</span></div>
+        <div id='question12' class='hide'>&#172 &#8707x.(TRIANGLE(x) &#8743 GREEN(x))</div>
+        <div id='question12-b' class='hide'>&#8704x.&#172(TRIANGLE(x) &#8743 GREEN(x))</div>
+        <div id='question12-c' class='hide'>&#8704x.(&#172TRIANGLE(x) &#8744 &#172GREEN(x))</div>
+        <div id='question12-d' class='hide'><span style='color:red;'>&#8704</span>x.(&#172TRIANGLE(x) &#8744 &#172GREEN(x))</div>
+        <div id='question12-e' class='hide'>&#8704<span style='color:red;'>x</span>.(&#172TRIANGLE(<span style='color:red;'>x</span>) &#8744 &#172GREEN(<span style='color:red;'>x</span>))</div>
+        <div id='question12-f' class='hide'>&#8704<span style='color:red;'>3</span>.(&#172TRIANGLE(<span style='color:red;'>3</span>) &#8744 &#172GREEN(<span style='color:red;'>3</span>))</div>
+        <div id='question12-g' class='hide'>&#172TRIANGLE(3) <span style='color:green;'>&#8744</span> &#172GREEN(3)</div>
+        <div id='question13' class='hide'>&#172 &#8704x.(&#172SUN(x) &#8744 PURPLE(x))</div>
+        <div id='question13-b' class='hide'>&#8707x.&#172(&#172SUN(x) &#8744 PURPLE(x))</div>
+        <div id='question13-c' class='hide'>&#8707x.(&#172&#172SUN(x) &#8743 &#172PURPLE(x))</div>
+        <div id='question13-d' class='hide'><span style='color:green;'>&#8707</span>x.(&#172&#172SUN(x) &#8743 &#172PURPLE(x))</div>
+        <div id='question13-e' class='hide'>&#8707<span style='color:green;'>x</span>.(&#172&#172SUN(<span style='color:green;'>x</span>) &#8743 &#172PURPLE(<span style='color:green;'>x</span>))</div>
+        <div id='question13-f' class='hide'>&#8707<span style='color:green;'>1</span>.(&#172&#172SUN(<span style='color:green;'>1</span>) &#8743 &#172PURPLE(<span style='color:green;'>1</span>))</div>
+        <div id='question13-f-opt2' class='hide'>&#8707<span style='color:green;'>2</span>.(&#172&#172SUN(<span style='color:green;'>2</span>) &#8743 &#172PURPLE(<span style='color:green;'>2</span>))</div>
+        <div id='question13-f-opt3' class='hide'>&#8707<span style='color:green;'>3</span>.(&#172&#172SUN(<span style='color:green;'>3</span>) &#8743 &#172PURPLE(<span style='color:green;'>3</span>))</div>
+        <div id='question13-g' class='hide'>&#172&#172SUN(1) <span style='color:red;'>&#8743</span> &#172PURPLE(1)</div>
+        <div id='question13-g-opt2' class='hide'>&#172&#172SUN(2) <span style='color:red;'>&#8743</span> &#172PURPLE(2)</div>
+        <div id='question13-g-opt3' class='hide'>&#172&#172SUN(3) <span style='color:red;'>&#8743</span> &#172PURPLE(3)</div>
+        <div id='question13-h' class='hide'><span style='color:red;'>&#172&#172SUN(1)</span></div>
+        <div id='question13-h-opt2' class='hide'><span style='color:red;'>&#172&#172SUN(2)</span></div>
+        <div id='question13-h-opt3' class='hide'><span style='color:red;'>&#172&#172SUN(3)</span></div>
+        <div id='question14' class='hide'>&#172 &#8707x.(PURPLE(x) &#8743 &#172MOON(x))</div>
+        <div id='question14-b' class='hide'>&#8704x.&#172(PURPLE((x) &#8743 &#172MOON(x))</div>
+        <div id='question14-c' class='hide'>&#8704x.(&#172PURPLE((x) &#8744 &#172&#172MOON(x))</div>
+        <div id='question14-d' class='hide'><span style='color:red;'>&#8704</span>x.(&#172PURPLE((x) &#8744 &#172&#172MOON(x))</div>
+        <div id='question14-e' class='hide'>&#8704<span style='color:red;'>x</span>.(&#172PURPLE((<span style='color:red;'>x</span>) &#8744 &#172&#172MOON(<span style='color:red;'>x</span>))</div>
+        <div id='question14-f' class='hide'>&#8704<span style='color:red;'>2</span>.(&#172PURPLE((<span style='color:red;'>2</span>) &#8744 &#172&#172MOON(<span style='color:red;'>2</span>))</div>
+        <div id='question14-g' class='hide'>&#172PURPLE(2) <span style='color:green;'>&#8744</span> &#172&#172MOON(2)</div>
+        <div id='question15' class='hide'>&#172 &#8704x.((MOON(x) &#8744 &#172ORANGE(x)) &#8744 SUN(x))</div>
+        <div id='question15-b' class='hide'>&#8707x.&#172((MOON(x) &#8744 &#172ORANGE(x)) &#8744 SUN(x))</div>
+        <div id='question15-c' class='hide'>&#8707x.(&#172(MOON(x) &#8744 &#172ORANGE(x)) &#8743 &#172 SUN(x))</div>
+        <div id='question15-d' class='hide'><span style='color:green;'>&#8707</span>x.(&#172(MOON(x) &#8744 &#172ORANGE(x)) &#8743 &#172 SUN(x))</div>
+        <div id='question15-e' class='hide'>&#8707<span style='color:green;'>x</span>.(&#172(MOON(<span style='color:green;'>x</span>) &#8744 &#172ORANGE(<span style='color:green;'>x</span>)) &#8743 &#172 SUN(<span style='color:green;'>x</span>))</div>
+        <div id='question15-f-opt1' class='hide'>&#8707<span style='color:green;'>1</span>.(&#172(MOON(<span style='color:green;'>1</span>) &#8744 &#172ORANGE(<span style='color:green;'>1</span>)) &#8743 &#172 SUN(<span style='color:green;'>1</span>))</div>
+        <div id='question15-f-opt2' class='hide'>&#8707<span style='color:green;'>2</span>.(&#172(MOON(<span style='color:green;'>2</span>) &#8744 &#172ORANGE(<span style='color:green;'>2</span>)) &#8743 &#172 SUN(<span style='color:green;'>2</span>))</div>
+        <div id='question15-f' class='hide'>&#8707<span style='color:green;'>3</span>.(&#172(MOON(<span style='color:green;'>3</span>) &#8744 &#172ORANGE(<span style='color:green;'>3</span>)) &#8743 &#172 SUN(<span style='color:green;'>3</span>))</div>
+        <div id='question15-g-opt1' class='hide'>&#172(MOON(1) &#8744 &#172ORANGE(1)) <span style='color:red;'>&#8743</span> &#172 SUN(1))</div>
+        <div id='question15-g-opt2' class='hide'>&#172(MOON(2) &#8744 &#172ORANGE(2)) <span style='color:red;'>&#8743</span> &#172 SUN(2))</div>
+        <div id='question15-g' class='hide'>&#172(MOON(3) &#8744 &#172ORANGE(3)) <span style='color:red;'>&#8743</span> &#172 SUN(3)</div>
+        <div id='question15-h' class='hide'><span style='color:red;'>&#172(MOON(3) &#8744 &#172ORANGE(3))</span></div>
+        <div id='question15-h-opt1' class='hide'>&#172(MOON(1) &#8744 &#172ORANGE(1)) &#8743 <span style='color:red;'>&#172 SUN(1)</span></div>
+        <div id='question15-h-opt2' class='hide'><span style='color:red;'>&#172(MOON(2) &#8744 &#172ORANGE(2))</span> &#8743 &#172 SUN(2)</div>
+        <div id='question15-i' class='hide'>&#172MOON(3) <span style='color:red;'>&#8743</span> &#172&#172ORANGE(3)</div>
+        <div id='question15-i-opt2' class='hide'>&#172MOON(2) <span style='color:red;'>&#8743</span> &#172&#172ORANGE(2)</div>
+        <div id='question15-j' class='hide'><span style='color:red;'>&#172MOON(3)</span></div>
+        <div id='question15-j-opt2' class='hide'><span style='color:red;'>&#172MOON(2)</span></div>
+        <div id='question16' class='hide'>&#172 &#8707x.((PURPLE(x) &#8744 MOON(x)) &#8743 &#172MOON(x))</div>
+        <div id='question16-b' class='hide'>&#8704x.&#172((PURPLE(x) &#8744 MOON(x)) &#8743 &#172MOON(x))</div>
+        <div id='question16-c' class='hide'>&#8704x.(&#172(PURPLE(x) &#8744 MOON(x)) &#8744 &#172&#172MOON(x))</div>
+        <div id='question16-d' class='hide'>&#8704<span style='color:red;'>1</span>.(&#172(PURPLE(<span style='color:red;'>1</span>) &#8744 MOON(<span style='color:red;'>1</span>)) &#8744 &#172&#172MOON(<span style='color:red;'>1</span>))</div>
+        <div id='question16-e' class='hide'>&#172(PURPLE(1) &#8744 MOON(1)) <span style='color:green;'>&#8744</span> &#172&#172MOON(1)</div>
+        <div id='question16-f' class='hide'><span style='color:green;'>&#172(PURPLE(1) &#8744 MOON(1))</span></div>
+        <div id='question16-f-opt2' class='hide'><span style='color:green;'>&#172&#172MOON(1)</span></div>
+        <div id='question16-g' class='hide'>&#172PURPLE(1) <span style='color:red;'>&#8743</span> &#172MOON(1)</div>
+        <div id='question16-h' class='hide'><span style='color:red;'>&#172PURPLE(1)</span></div>
+        <div id='question17' class='hide'>&#172 &#8704x.((SUN(x) &#8744 &#172ORANGE(x)) &#8744 (MOON(x) &#8743 ORANGE(x)))</div>
+        <div id='question17-b' class='hide'>&#8707x.&#172((SUN(x) &#8744 &#172ORANGE(x)) &#8744 (MOON(x) &#8743 ORANGE(x)))</div>
+        <div id='question17-c' class='hide'>&#8707<span style='color:green;'>x</span>.(&#172(SUN(<span style='color:green;'>x</span>) &#8744 &#172ORANGE(<span style='color:green;'>x</span>)) &#8743 &#172(MOON(<span style='color:green;'>x</span>) &#8743 ORANGE(<span style='color:green;'>x</span>)))</div>
+        <div id='question17-d' class='hide'>&#172(SUN(3) &#8744 &#172ORANGE(3)) &#8743 <span style='color:red;'>&#172(MOON(3) &#8743 ORANGE(3))</span></div>
+        <div id='question17-d-opt1' class='hide'><span style='color:red;'>&#172(SUN(1) &#8744 &#172ORANGE(1))</span> &#8743 &#172(MOON(1) &#8743 ORANGE(1))</div>
+        <div id='question17-d-opt2' class='hide'><span style='color:red;'>&#172(SUN(2) &#8744 &#172ORANGE(2))</span> &#8743 &#172(MOON(2) &#8743 ORANGE(2))</div>
+        <div id='question17-e' class='hide'>&#172MOON(3) <span style='color:green;'>&#8744</span> &#172ORANGE(3)</div>
+        <div id='question17-e-opt1' class='hide'><span style='color:red;'>&#172SUN(1)</span> &#8743 &#172&#172ORANGE(1)</div>
+        <div id='question17-e-opt2' class='hide'>&#172SUN(2) &#8743 <span style='color:red;'>&#172&#172ORANGE(2)</span></div>
+        <div id='question18' class='hide'>&#172 &#8707x.((&#172MOON(x) &#8744 ORANGE(x)) &#8743 (PURPLE(x) &#8744 MOON(x)))</div>
+        <div id='question18-b' class='hide'>&#8704x.&#172((&#172MOON(x) &#8744 ORANGE(x)) &#8743 (PURPLE(x) &#8744 MOON(x)))</div>
+        <div id='question18-c' class='hide'>&#8704x.(&#172(&#172MOON(x) &#8744 ORANGE(x)) &#8744 &#172(PURPLE(x) &#8744 MOON(x)))</div>
+        <div id='question18-d' class='hide'>&#8704<span style='color:red;'>1</span>.(&#172(&#172MOON(<span style='color:red;'>1</span>) &#8744 ORANGE(<span style='color:red;'>1</span>)) &#8744 &#172(PURPLE(<span style='color:red;'>1</span>) &#8744 MOON(<span style='color:red;'>1</span>)))</div>
+        <div id='question18-e' class='hide'>&#172(&#172MOON(1) &#8744 ORANGE(1)) <span style='color:green;'>&#8744</span> &#172(PURPLE(1) &#8744 MOON(1))</div>
+        <div id='question18-f' class='hide'><span style='color:green;'>&#172(PURPLE(1) &#8744 MOON(1))</span></div>
+        <div id='question18-f-opt1' class='hide'><span style='color:green;'>&#172(&#172MOON(1) &#8744 ORANGE(1))</span></div>
+        <div id='question18-g' class='hide'>&#172PURPLE(1) <span style='color:red;'>&#8743</span> &#172MOON(1)</div>
+        <div id='question18-g-opt1' class='hide'>&#172&#172MOON(1) <span style='color:red;'>&#8744</span> &#172ORANGE(1))</div>
+        <div id='question18-h' class='hide'><span style='color:red;'>&#172PURPLE(1)</span></div>
+        <div id='question18-h-opt1' class='hide'><span style='color:red;'>&#172&#172MOON(1)</span></div>
+        <div id='trueResult' class='hide'>True! This object is a square, but not red.</div>
+        <div id='falseResult' class='hide'>False! This object is a square, but not red.</div>
+        <div id='trueResult8' class='hide'>True! This object is a triangle.</div>
+        <div id='falseResult8' class='hide'>False! This object is a square, not a triangle.</div>
+        <div id='trueResult10' class='hide'>True! This object is not a square.</div>
+        <div id='falseResult10' class='hide'>False! This object is a square.</div>
+        <div id='trueResult12' class='hide'>True! This object is not a triangle.</div>
+        <div id='falseResult12' class='hide'>False! This object is green.</div>
+        <div id='trueResult13' class='hide'>True! This object is a sun.</div>
+        <div id='falseResult13' class='hide'>False! This object is not a sun.</div>
+        <div id='trueResult14' class='hide'>True! This object is a moon.</div>
+        <div id='falseResult14' class='hide'>False! This object is purple.</div>
+        <div id='trueResult15' class='hide'>True! This object is not a moon.</div>
+        <div id='falseResult15opt1' class='hide'>False! This object is a sun.</div>
+        <div id='falseResult15opt2' class='hide'>False! This object is a moon.</div>
+        <div id='trueResult16' class='hide'>True! This object is not purple.</div>
+        <div id='falseResult16' class='hide'>False! This object is not a moon.</div>
+        <div id='trueResult17' class='hide'>True! This object is not a moon.</div>
+        <div id='falseResult17' class='hide'>False! This object is orange.</div>
+        <div id='falseResult17opt1' class='hide'>False! This object is a sun.</div>
+        <div id='falseResult17opt2' class='hide'>False! This object is not orange.</div>
+        <div id='trueResult18' class='hide'>True! This object is not purple.</div>
+        <div id='falseResult18' class='hide'>False! This object is not a moon.</div>
+        <div id='correct' class='hide'>Correct!</div>
+        <div id='incorrect' class='hide'>Incorrect!</div>
+        <div id='world' class='hide'>
+            <img src='assets/blue_square.png' id='blueSquare' class='object'>
+            <img src='assets/red-triangle.png' id='redTriangle' class='object'>
+            <img src='assets/green_square.png' id='greenSquare' class='object'>
+        </div>
+        <div id='world2' class='hide'>
+            <img src='assets/sun.png' id='sun' class='object'>
+            <img src='assets/moon.png' id='moon' class='object2'>
+            <img src='assets/cloud.png' id='cloud' class='object'>
+        </div>
+    </div>
+    <div id='answer-btns' class='hide'> <!--change to vertical buttons-->
+        <!--Duolingo has 1,2,3 key presses next to buttons-->
+        <!--They don't say click or anything-->
+        <button id='answer1' class='btn hide'>SQUARE(1)</button>
+        <button id='answer2' class='btn hide'>RED(1)</button>
+        <button id='answer3' class='btn hide'>&#172TRIANGLE(3)</button>
+        <button id='answer4' class='btn hide'>&#172GREEN(3)</button>
+        <button id='answer5' class='btn hide'>&#172PURPLE(2)</button>
+        <button id='answer6' class='btn hide'>&#172&#172MOON(2)</button>
+        <button id='answer7' class='btn hide'>&#172(PURPLE(x) &#8744 MOON(x))</button>
+        <button id='answer8' class='btn hide'>&#172&#172MOON(x)</button>
+        <button id='answer9' class='btn hide'>&#172MOON(x)</button>
+        <button id='answer10' class='btn hide'>&#172ORANGE(x)</button>
+        <button id='answer11' class='btn hide'>&#172(&#172MOON(1) &#8744 ORANGE(1))</button>
+        <button id='answer12' class='btn hide'>&#172(PURPLE(x) &#8744 MOON(x))</button>
+        <button id='t' class='btn hide'>True</button>
+        <button id='f' class='btn hide'>False</button>
+        <button id="l1a1" class="hide"><img src='assets/blue_square.png' class="image-button"></button>
+        <button id="l1a2" class="hide"><img src='assets/red-triangle.png' class="image-button"></button>
+        <button id="l1a3" class="hide"><img src='assets/green_square.png' class="image-button"></button>
+        <button id="l2a1" class="hide"><img src='assets/sun.png' class="image-button"></button>
+        <button id="l2a2" class="hide"><img src='assets/moon.png' class="image-button2"></button>
+        <button id="l2a3" class="hide"><img src='assets/cloud.png' class="image-button"></button>
+    </div>
+    <div id='modeInstruction' class='hide'>Select a mode</div>
+    <div id='modes' class="hide"> <!--change to learn/play mode, learn (9) = tutorial-like, play (9) = game-->
+        <!-- Select a mode. -->
+        <button id='easy' class="btn hide easy">Easy</button>
+        <button id='medium' class="btn hide medium">Medium</button>
+        <button id='hard' class="btn hide hard">Hard</button>
+    </div>
+    <div id='levelInstruction' class='hide'>Select a level</div>
+    <div id='easyLevels' class="hide levels">
+        <button id='1' class='btn hide easy'>1</button>
+        <button id='2' class='btn hide easy'>2</button>
+        <button id='3' class='btn hide easy'>3</button>
+        <button id='4' class='btn hide easy'>4</button>
+        <button id='5' class='btn hide easy'>5</button>
+        <button id='6' class='btn hide easy'>6</button>
+    </div>
+    <div id='mediumLevels' class="hide levels">
+        <button id='7' class='btn hide medium'>7</button>
+        <button id='8' class='btn hide medium'>8</button>
+        <button id='9' class='btn hide medium'>9</button>
+        <button id='10' class='btn hide medium'>10</button>
+        <button id='11' class='btn hide medium'>11</button>
+        <button id='12' class='btn hide medium'>12</button>
+    </div>
+    <div id='hardLevels' class="hide levels">
+        <button id='13' class='btn hide hard'>13</button>
+        <button id='14' class='btn hide hard'>14</button>
+        <button id='15' class='btn hide hard'>15</button>
+        <button id='16' class='btn hide hard'>16</button>
+        <button id='17' class='btn hide hard'>17</button>
+        <button id='18' class='btn hide hard'>18</button>
+    </div>
+    <div class='controls'>
+        <button id='start-btn' class='start-btn btn'>Start</button>
+        <button id='back-btn' class='back-btn btn hide'>Back</button>
+        <button id='help-btn' class='help-btn btn hide'>Help</button>
+        <button id='next-btn' class='next-btn btn hide'>Next</button>
+    </div>
+</body>
+</html>
