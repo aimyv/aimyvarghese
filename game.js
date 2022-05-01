@@ -1,3 +1,13 @@
+const dm1 = document.getElementById('dm1')
+const dm2 = document.getElementById('dm2')
+const dm3 = document.getElementById('dm3')
+const dm4 = document.getElementById('dm4')
+const and = document.getElementById('and')
+const or = document.getElementById('or')
+const not = document.getElementById('not')
+const all = document.getElementById('all')
+const exists = document.getElementById('exists')
+
 const backButton = document.getElementById('back-btn')
 const nextButton = document.getElementById('next-btn')
 const helpButton = document.getElementById('help-btn')
@@ -268,30 +278,42 @@ function clickTrue() {
     nextButton.classList.add('hide')
     world.classList.add('hide')
     world2.classList.add('hide')
-    if (n==0 && l==3) {
+    if (l==1) {
+        and.classList.remove('hide')
+    } else if (l==2) {
+        or.classList.remove('hide')
+    } else if (n==0 && l==3) {
         backButton.classList.add('hide')
         nextButton.classList.remove('hide')
-    } else if(n==0 && l==4) {
+    } else if (n==1 && l==3) {
+        not.classList.remove('hide')
+    } else if (n==0 && l==4) {
         backButton.classList.add('hide')
         nextButton.classList.remove('hide')
-    } else if(n==1 && l==4) {
+    } else if (n==1 && l==4) {
         backButton.classList.add('hide')
         nextButton.classList.remove('hide')
-    } else if(n==2 && l==4) {
+        dm1.classList.remove('hide')
+    } else if (n==2 && l==4) {
         backButton.classList.add('hide')
         nextButton.classList.remove('hide')
-    } else if(n==0 && l==9) {
+    } else if (n==3 && l==4) {
+        dm2.classList.remove('hide')
+    } else if (l==5) {
+        all.classList.remove('hide')
+    } else if (l==6) {
+        exists.classList.remove('hide')
+    } else if (n==0 && l==9) {
         backButton.classList.add('hide')
         nextButton.classList.remove('hide')
-    } else if(n==1 && l==9) {
-        backButton.classList.remove('hide')
-        nextButton.classList.add('hide')
-    } else if(n==0 && l==11) {
+    } else if (n==1 && l==9) {
+        dm3.classList.remove('hide')
+    } 
+    else if (n==0 && l==11) {
         backButton.classList.add('hide')
         nextButton.classList.remove('hide')
-    } else if(n==1 && l==11) {
-        backButton.classList.remove('hide')
-        nextButton.classList.add('hide')
+    } else if (n==1 && l==11) {
+        dm4.classList.remove('hide')
     } 
     helpButton.classList.add('hide')
 }
@@ -490,6 +512,7 @@ function playLevel7() {
     showWorldComponents()
     hideQuestions()
     question.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 const trueResult = document.getElementById('trueResult')
 const falseResult = document.getElementById('falseResult')
@@ -499,6 +522,7 @@ function clickedAnswer1() {
     trueResult.classList.remove('hide')
     answerButtons.classList.add('hide')
     backButton.classList.remove('hide')
+    helpButton.classList.add('hide')
 }
 
 function clickedAnswer2() {
@@ -508,6 +532,7 @@ function clickedAnswer2() {
     backButton.classList.remove('hide')
     container.classList.remove('correct')
     container.classList.add('wrong')
+    helpButton.classList.add('hide')
 }
 
 function clickedAnswer3() {
@@ -517,6 +542,7 @@ function clickedAnswer3() {
     backButton.classList.remove('hide')
     container.classList.add('correct')
     container.classList.remove('wrong')
+    helpButton.classList.add('hide')
 }
 
 function clickedAnswer4() {
@@ -526,6 +552,7 @@ function clickedAnswer4() {
     backButton.classList.remove('hide')
     container.classList.remove('correct')
     container.classList.add('wrong')
+    helpButton.classList.add('hide')
 }
 
 function clickedAnswer5() {
@@ -535,6 +562,8 @@ function clickedAnswer5() {
     backButton.classList.remove('hide')
     container.classList.remove('correct')
     container.classList.add('wrong')
+    helpButton.classList.add('hide')
+    helpButton.classList.add('hide')
 }
 
 function clickedAnswer6() {
@@ -544,6 +573,7 @@ function clickedAnswer6() {
     backButton.classList.remove('hide')
     container.classList.add('correct')
     container.classList.remove('wrong')
+    helpButton.classList.add('hide')
 }
 
 function clickedAnswer7() {
@@ -553,6 +583,7 @@ function clickedAnswer7() {
     container.classList.add('correct')
     container.classList.remove('wrong')
     nextButton.classList.remove('hide')
+    helpButton.classList.add('hide')
 
     option = 1
 }
@@ -562,6 +593,7 @@ function clickedAnswer8() {
     question16fopt2.classList.remove('hide')
     answerButtons.classList.add('hide')
     nextButton.classList.remove('hide')
+    helpButton.classList.add('hide')
 
     option = 2
 }
@@ -572,6 +604,7 @@ function clickedAnswer9() {
     nextButton.classList.add('hide')
     trueResult17.classList.remove('hide')
     backButton.classList.remove('hide')
+    helpButton.classList.add('hide')
 }
 
 function clickedAnswer10() {
@@ -582,6 +615,7 @@ function clickedAnswer10() {
     container.classList.remove('correct')
     container.classList.add('wrong')
     backButton.classList.remove('hide')
+    helpButton.classList.add('hide')
 }
 
 function clickedAnswer11() {
@@ -589,6 +623,7 @@ function clickedAnswer11() {
     question18fopt1.classList.remove('hide')
     answerButtons.classList.add('hide')
     nextButton.classList.remove('hide')
+    helpButton.classList.add('hide')
     option = 1
 }
 
@@ -597,6 +632,7 @@ function clickedAnswer12() {
     question18f.classList.remove('hide')
     answerButtons.classList.add('hide')
     nextButton.classList.remove('hide')
+    helpButton.classList.add('hide')
     option = 2
 }
 
@@ -612,6 +648,7 @@ function playLevel8() {
     showWorldComponents()
     hideQuestions()
     question8.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 
 const trueResult8 = document.getElementById('trueResult8')
@@ -794,6 +831,7 @@ function playLevel10() {
     showWorldComponents()
     hideQuestions()
     question10.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel11() {
     mediumLevels.classList.add('hide')
@@ -838,6 +876,7 @@ function playLevel12() {
     showWorldComponents()
     hideQuestions()
     question12.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 
 hard.addEventListener('click', goHard)
@@ -876,6 +915,7 @@ function playLevel13() {
     showWorld2Components()
     hideQuestions()
     question13.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel14() {
     hardLevels.classList.add('hide')
@@ -889,6 +929,7 @@ function playLevel14() {
     showWorld2Components()
     hideQuestions()
     question14.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel15() {
     hardLevels.classList.add('hide')
@@ -902,6 +943,7 @@ function playLevel15() {
     showWorld2Components()
     hideQuestions()
     question15.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel16() {
     hardLevels.classList.add('hide')
@@ -915,6 +957,7 @@ function playLevel16() {
     showWorld2Components()
     hideQuestions()
     question16.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel17() {
     hardLevels.classList.add('hide')
@@ -928,6 +971,7 @@ function playLevel17() {
     showWorld2Components()
     hideQuestions()
     question17.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel18() {
     hardLevels.classList.add('hide')
@@ -941,6 +985,7 @@ function playLevel18() {
     showWorld2Components()
     hideQuestions()
     question18.classList.remove('hide')
+    helpButton.classList.remove('hide')
 }
 
 const answerButtons = document.getElementById('answer-btns')
@@ -1061,6 +1106,7 @@ function goNext() {
         correct.classList.add('hide')
         nextButton.classList.add('hide')
         helpButton.classList.remove('hide')
+        dm1.classList.add('hide')
     } else if (n==3 && l==4) {
         container.classList.remove('hide')
         answerButtons.classList.remove('hide')
@@ -1145,6 +1191,7 @@ function goNext() {
         l1a2.addEventListener('click', clickTriangle)
         l1a1.addEventListener('click', clickBlueSquare)
         l1a3.addEventListener('click', clickGreenSquare)
+        helpButton.classList.remove('hide')
     } else if (n==3 && l==8 && option==2) {
         container.classList.remove('correct')
         container.classList.add('wrong')
@@ -1160,6 +1207,7 @@ function goNext() {
         trueResult8.classList.remove('hide')
         nextButton.classList.add('hide')
         backButton.classList.remove('hide')
+        helpButton.classList.add('hide')
     } else if (n==3 && l==8 && option==1) {
         container.classList.remove('correct')
         container.classList.add('wrong')
@@ -1175,6 +1223,7 @@ function goNext() {
         falseResult8.classList.remove('hide')
         nextButton.classList.add('hide')
         backButton.classList.remove('hide')
+        helpButton.classList.add('hide')
     } else if (n==3 && l==8 && option==3) {
         container.classList.remove('correct')
         container.classList.add('wrong')
@@ -1190,6 +1239,7 @@ function goNext() {
         falseResult8.classList.remove('hide')
         nextButton.classList.add('hide')
         backButton.classList.remove('hide')
+        helpButton.classList.add('hide')
     } else if (n==1 && l==9) {
         container.classList.remove('hide')
         answerButtons.classList.remove('hide')
@@ -1291,6 +1341,7 @@ function goNext() {
         trueResult10.classList.remove('hide')
         nextButton.classList.add('hide')
         backButton.classList.remove('hide')
+        helpButton.classList.add('hide')
     } else if (n==5 && l==10 && option==1) {
         container.classList.remove('correct')
         container.classList.add('wrong')
@@ -1306,6 +1357,7 @@ function goNext() {
         falseResult10.classList.remove('hide')
         nextButton.classList.add('hide')
         backButton.classList.remove('hide')
+        helpButton.classList.add('hide')
     } else if (n==5 && l==10 && option==3) {
         container.classList.remove('correct')
         container.classList.add('wrong')
@@ -1321,6 +1373,7 @@ function goNext() {
         falseResult10.classList.remove('hide')
         nextButton.classList.add('hide')
         backButton.classList.remove('hide')
+        helpButton.classList.add('hide')
     } else if (n==1 && l==12) {
         question12.classList.add('hide')
         question12b.classList.remove('hide')
@@ -1784,6 +1837,7 @@ function goBack() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
+        and.classList.add('hide')
     } else if (depth == 3 && m == 1 && l == 2) {
         easyLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1796,6 +1850,7 @@ function goBack() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
+        or.classList.add('hide')
     } else if (depth == 3 && m == 1 && l == 3) {
         easyLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1809,6 +1864,7 @@ function goBack() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
+        not.classList.add('hide')
     } else if (depth == 3 && m == 1 && l == 4) {
         easyLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1822,6 +1878,8 @@ function goBack() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
+        dm1.classList.add('hide')
+        dm2.classList.add('hide')
     } else if (depth == 3 && m == 1 && l == 5) {
         easyLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1834,6 +1892,7 @@ function goBack() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
+        all.classList.add('hide')
     } else if (depth == 3 && m == 1 && l == 6) {
         easyLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1846,6 +1905,7 @@ function goBack() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
+        exists.classList.add('hide')
     } else if (depth == 3 && m == 2 && l == 7) {
         mediumLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1859,6 +1919,7 @@ function goBack() {
         container.classList.remove('wrong')
         redTriangle.classList.remove('hide')
         greenSquare.classList.remove('hide')
+        helpButton.classList.add('hide')
 
         depth -= 1
         l -= 7
@@ -1876,6 +1937,7 @@ function goBack() {
         container.classList.remove('wrong')
         blueSquare.classList.remove('hide')
         greenSquare.classList.remove('hide')
+        helpButton.classList.add('hide')
 
         depth -= 1
         l -= 8
@@ -1893,6 +1955,7 @@ function goBack() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
+        dm3.classList.add('hide')
     } else if (depth == 3 && m == 2 && l == 10) {
         mediumLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1906,6 +1969,7 @@ function goBack() {
         container.classList.remove('wrong')
         blueSquare.classList.remove('hide')
         greenSquare.classList.remove('hide')
+        helpButton.classList.add('hide')
 
         depth -= 1
         l -= 10
@@ -1923,6 +1987,7 @@ function goBack() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
+        dm4.classList.add('hide')
     } else if (depth == 3 && m == 2 && l == 12) {
         mediumLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1938,6 +2003,7 @@ function goBack() {
         container.classList.remove('wrong')
         blueSquare.classList.remove('hide')
         greenSquare.classList.remove('hide')
+        helpButton.classList.add('hide')
     } else if (depth == 3 && m == 3 && l == 13) {
         hardLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1951,6 +2017,7 @@ function goBack() {
         container.classList.remove('wrong')
         moon.classList.remove('hide')
         cloud.classList.remove('hide')
+        helpButton.classList.add('hide')
         
         depth -= 1
         l -= 13
@@ -1968,6 +2035,7 @@ function goBack() {
         container.classList.remove('wrong')
         sun.classList.remove('hide')
         cloud.classList.remove('hide')
+        helpButton.classList.add('hide')
 
         depth -= 1
         l -= 14
@@ -1984,6 +2052,7 @@ function goBack() {
         falseResult15opt2.classList.add('hide')
         container.classList.remove('correct')
         container.classList.remove('wrong')
+        helpButton.classList.add('hide')
 
         depth -= 1
         l -= 15
@@ -2001,6 +2070,7 @@ function goBack() {
         container.classList.remove('wrong')
         moon.classList.remove('hide')
         cloud.classList.remove('hide')
+        helpButton.classList.add('hide')
 
         depth -= 1
         l -= 16
@@ -2018,6 +2088,7 @@ function goBack() {
         falseResult17opt2.classList.add('hide')
         container.classList.remove('correct')
         container.classList.remove('wrong')
+        helpButton.classList.add('hide')
 
         depth -= 1
         l -= 17
@@ -2033,6 +2104,7 @@ function goBack() {
         falseResult18.classList.add('hide')
         container.classList.remove('correct')
         container.classList.remove('wrong')
+        helpButton.classList.add('hide')
 
         depth -= 1
         l -= 18
@@ -2069,6 +2141,8 @@ function getHelp() {
         alert('True or False?: NONE of these objects are triangles.')
     } else if (l==11 && n==1) {
         alert('True or False?: ALL of these objects are NOT triangles.')
+    } else if (l==7 || l==8 || l==10 || l==12 || l==13 || l==14 || l==15 || l==16 || l==17 || l==18) {
+        alert('Click next to see the sentence narrow.\n\nIf the container is green, it is your turn. When some answers are presented to you, pick an option which will make the sentence true to win the level.\n\nBe careful, the computer will try to make the sentence false!')
     }
 }
 

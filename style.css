@@ -276,6 +276,15 @@ body {
   padding: 15px;
 }
 
+#dm1,
+#dm2,
+#dm3,
+#dm4,
+#and,
+#or,
+#not,
+#all,
+#exists,
 #modeInstruction,
 #levelInstruction,
 #trueResult,
