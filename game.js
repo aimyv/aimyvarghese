@@ -1,11 +1,12 @@
 const backButton = document.getElementById('back-btn')
 const nextButton = document.getElementById('next-btn')
+const helpButton = document.getElementById('help-btn')
 
 const startButton = document.getElementById('start-btn')
 const modes = document.getElementById('modes')
 const modeInstruction = document.getElementById('modeInstruction')
 const levelInstruction = document.getElementById('levelInstruction')
-const turnInstruction = document.getElementById('turnInstruction')
+const teachAND = document.getElementById('teachAND')
 
 const easy = document.getElementById('easy')
 const easyLevels = document.getElementById('easyLevels')
@@ -188,6 +189,8 @@ let n = 0
 startButton.addEventListener('click', startGame)
 backButton.addEventListener('click', goBack)
 nextButton.addEventListener('click', incrementN)
+helpButton.addEventListener('click', getHelp)
+
 
 function startGame() {
     startButton.classList.add('hide')
@@ -251,6 +254,7 @@ function playLevel1() {
     hideSet8()
     hideSet9()
     backButton.classList.add('hide')
+    helpButton.classList.remove('hide')
 }
 
 function clickTrue() {
@@ -264,7 +268,7 @@ function clickTrue() {
     nextButton.classList.add('hide')
     world.classList.add('hide')
     world2.classList.add('hide')
-    if(n==0 && l==3) {
+    if (n==0 && l==3) {
         backButton.classList.add('hide')
         nextButton.classList.remove('hide')
     } else if(n==0 && l==4) {
@@ -289,6 +293,7 @@ function clickTrue() {
         backButton.classList.remove('hide')
         nextButton.classList.add('hide')
     } 
+    helpButton.classList.add('hide')
 }
 
 function clickFalse() {
@@ -302,6 +307,7 @@ function clickFalse() {
     nextButton.classList.add('hide')
     world.classList.add('hide')
     world2.classList.add('hide')
+    helpButton.classList.add('hide')
 }
 
 function playLevel2() {
@@ -331,6 +337,7 @@ function playLevel2() {
     hideSet8()
     hideSet9()
     backButton.classList.add('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel3() {
     easyLevels.classList.add('hide')
@@ -359,6 +366,7 @@ function playLevel3() {
     hideSet8()
     hideSet9()
     backButton.classList.add('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel4() {
     easyLevels.classList.add('hide')
@@ -387,6 +395,7 @@ function playLevel4() {
     hideSet8()
     hideSet9()
     backButton.classList.add('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel5() {
     easyLevels.classList.add('hide')
@@ -414,6 +423,7 @@ function playLevel5() {
     f.addEventListener('click', clickTrue)
     t.removeEventListener('click', clickTrue)
     f.removeEventListener('click', clickFalse)
+    helpButton.classList.remove('hide')
 }
 function playLevel6() {
     easyLevels.classList.add('hide')
@@ -441,6 +451,7 @@ function playLevel6() {
     f.addEventListener('click', clickFalse)
     t.removeEventListener('click', clickFalse)
     f.removeEventListener('click', clickTrue)
+    helpButton.classList.remove('hide')
 }
 
 medium.addEventListener('click', goMedium)
@@ -769,6 +780,7 @@ function playLevel9() {
     f.addEventListener('click', clickFalse)
     t.removeEventListener('click', clickFalse)
     f.removeEventListener('click', clickTrue)
+    helpButton.classList.remove('hide')
 }
 function playLevel10() {
     mediumLevels.classList.add('hide')
@@ -812,6 +824,7 @@ function playLevel11() {
     container.classList.remove('wrong')
     correct.classList.add('hide')
     nextButton.classList.add('hide')
+    helpButton.classList.remove('hide')
 }
 function playLevel12() {
     mediumLevels.classList.add('hide')
@@ -993,6 +1006,7 @@ function goNext() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         nextButton.classList.add('hide')
+        helpButton.classList.remove('hide')
     } else if (n==1 && l==4) {
         container.classList.remove('hide')
         answerButtons.classList.remove('hide')
@@ -1019,6 +1033,7 @@ function goNext() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         nextButton.classList.add('hide')
+        helpButton.classList.remove('hide')
     } else if (n==2 && l==4) {
         container.classList.remove('hide')
         answerButtons.classList.remove('hide')
@@ -1045,6 +1060,7 @@ function goNext() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         nextButton.classList.add('hide')
+        helpButton.classList.remove('hide')
     } else if (n==3 && l==4) {
         container.classList.remove('hide')
         answerButtons.classList.remove('hide')
@@ -1071,6 +1087,7 @@ function goNext() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         nextButton.classList.add('hide')
+        helpButton.classList.remove('hide')
     } else if (n==1 && l==7) {
         container.classList.add('wrong')
         question.classList.add('hide')
@@ -1198,6 +1215,7 @@ function goNext() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         nextButton.classList.add('hide')
+        helpButton.classList.remove('hide')
     } else if (n==1 && l==11) {
         container.classList.remove('hide')
         answerButtons.classList.remove('hide')
@@ -1223,6 +1241,7 @@ function goNext() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         nextButton.classList.add('hide')
+        helpButton.classList.remove('hide')
     } else if (n==1 && l==10) {
         question10.classList.add('hide')
         question10b.classList.remove('hide')
@@ -2022,7 +2041,35 @@ function goBack() {
 }
 
 function getHelp() {
-
+    if (l==1) {
+        alert('Pick an object that is both a square AND blue.')
+    } else if (l==2) {
+        alert('Pick an object that is either a square OR blue.')
+    } else if (l==3 && n==0) {
+        alert('Pick an object that is NOT a square.')
+    } else if (l==3 && n==1) {
+        alert('Pick an object that is NOT NOT a square.')
+    } else if (l==4 && n==0) {
+        alert('Work out what\'s in the brackets first!')
+    } else if (l==4 && n==1) {
+        alert('Pick an object that is NOT a triangle AND NOT blue.')
+    } else if (l==4 && n==2) {
+        alert('Work out what\'s in the brackets first!')
+    } else if (l==4 && n==3) {
+        alert('Pick an object that is NOT a square OR NOT green.')
+    } else if (l==5) {
+        alert('True or False?: ALL of these objects are squares.')
+    } else if (l==6) {
+        alert('True or False?: SOME of these objects are triangles.')
+    } else if (l==9 && n==0) {
+        alert('True or False?: NOT ALL of these objects are squares.')
+    } else if (l==9 && n==1) {
+        alert('True or False?: SOME of these objects are NOT squares.')
+    } else if (l==11 && n==0) {
+        alert('True or False?: NONE of these objects are triangles.')
+    } else if (l==11 && n==1) {
+        alert('True or False?: ALL of these objects are NOT triangles.')
+    }
 }
 
 function hideQuestions() {
