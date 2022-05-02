@@ -211,7 +211,7 @@ function startGame() {
     easy.classList.remove('hide')
     medium.classList.remove('hide')
     hard.classList.remove('hide')
-    depth += 1
+    depth = 1
 }
 
 easy.addEventListener('click', goEasy)
@@ -227,8 +227,8 @@ function goEasy() {
     level4.classList.remove('hide')
     level5.classList.remove('hide')
     level6.classList.remove('hide')
-    depth += 1
-    m += 1
+    depth = 2
+    m = 1
 }
 
 level1.addEventListener('click', playLevel1)
@@ -310,7 +310,6 @@ function clickTrue() {
         nextLevel.classList.remove('hide')
     } else if (l==6) {
         exists.classList.remove('hide')
-        nextLevel.classList.remove('hide')
     } else if (n==0 && l==9) {
         backButton.classList.add('hide')
         nextButton.classList.remove('hide')
@@ -504,8 +503,8 @@ function goMedium() {
     level10.classList.remove('hide')
     level11.classList.remove('hide')
     level12.classList.remove('hide')
-    depth += 1
-    m += 2
+    depth = 2
+    m = 2
 }
 
 level7.addEventListener('click', playLevel7)
@@ -519,6 +518,7 @@ function playLevel7() {
     mediumLevels.classList.add('hide')
     levelInstruction.classList.add('hide')
     depth = 3
+    m = 2
     l = 7
     nextButton.classList.remove('hide')
     container.classList.remove('hide')
@@ -529,6 +529,7 @@ function playLevel7() {
     question.classList.remove('hide')
     helpButton.classList.remove('hide')
     nextLevel.classList.add('hide')
+    backButton.classList.remove('hide')
 }
 const trueResult = document.getElementById('trueResult')
 const falseResult = document.getElementById('falseResult')
@@ -562,7 +563,6 @@ function clickedAnswer3() {
     container.classList.remove('wrong')
     helpButton.classList.add('hide')
     nextButton.classList.add('hide')
-    nextLevel.classList.remove('hide')
 }
 
 function clickedAnswer4() {
@@ -920,8 +920,8 @@ function goHard() {
     level16.classList.remove('hide')
     level17.classList.remove('hide')
     level18.classList.remove('hide')
-    depth += 1
-    m += 3
+    depth = 2
+    m = 3
 }
 
 level13.addEventListener('click', playLevel13)
@@ -1850,8 +1850,8 @@ function goBack() {
         level4.classList.add('hide')
         level5.classList.add('hide')
         level6.classList.add('hide')
-        depth -= 1
-        m -= 1
+        depth = 1
+        m = 0
     } else if (depth == 2 && m == 2) {
         modes.classList.remove('hide')
         modeInstruction.classList.remove('hide')
@@ -1863,8 +1863,8 @@ function goBack() {
         level10.classList.add('hide')
         level11.classList.add('hide')
         level12.classList.add('hide')
-        depth -= 1
-        m -= 2
+        depth = 1
+        m = 0
     } else if (depth == 2 && m == 3) {
         modes.classList.remove('hide')
         modeInstruction.classList.remove('hide')
@@ -1876,8 +1876,8 @@ function goBack() {
         level16.classList.add('hide')
         level17.classList.add('hide')
         level18.classList.add('hide')
-        depth -= 1
-        m -= 3
+        depth = 1
+        m = 0
     } else if (depth == 3 && m == 1 && l == 1) {
         easyLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -1964,7 +1964,6 @@ function goBack() {
         correct.classList.add('hide')
         incorrect.classList.add('hide')
         exists.classList.add('hide')
-        nextLevel.classList.add('hide')
     } else if (depth == 3 && m == 2 && l == 7) {
         mediumLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -2068,7 +2067,6 @@ function goBack() {
         blueSquare.classList.remove('hide')
         greenSquare.classList.remove('hide')
         helpButton.classList.add('hide')
-        nextLevel.classList.add('hide')
     } else if (depth == 3 && m == 3 && l == 13) {
         hardLevels.classList.remove('hide')
         levelInstruction.classList.remove('hide')
@@ -2175,7 +2173,6 @@ function goBack() {
         container.classList.remove('correct')
         container.classList.remove('wrong')
         helpButton.classList.add('hide')
-        nextLevel.classList.add('hide')
 
         depth -= 1
         l -= 18
@@ -2237,16 +2234,6 @@ function incLevel() {
         incorrect.classList.add('hide')
         all.classList.add('hide')
         playLevel6()
-    } else if (l==6) {
-        nextButton.classList.add('hide')
-        container.classList.add('hide')
-        answerButtons.classList.add('hide')
-        container.classList.remove('correct')
-        container.classList.remove('wrong')
-        correct.classList.add('hide')
-        incorrect.classList.add('hide')
-        exists.classList.add('hide')
-        playLevel7()
     } else if (l==7) {
         n = 0
         nextButton.classList.add('hide')
@@ -2308,19 +2295,6 @@ function incLevel() {
         incorrect.classList.add('hide')
         dm4.classList.add('hide')
         playLevel12()
-    } else if (l==12) {
-        n = 0
-        nextButton.classList.add('hide')
-        container.classList.add('hide')
-        question12.classList.add('hide')
-        trueResult12.classList.add('hide')
-        falseResult12.classList.add('hide')
-        container.classList.remove('correct')
-        container.classList.remove('wrong')
-        blueSquare.classList.remove('hide')
-        greenSquare.classList.remove('hide')
-        helpButton.classList.add('hide')
-        playLevel13()
     } else if (l==13) {
         n = 0
         nextButton.classList.add('hide')
