@@ -4,7 +4,8 @@ const dm3 = document.getElementById('dm3')
 const dm4 = document.getElementById('dm4')
 const and = document.getElementById('and')
 const or = document.getElementById('or')
-const not = document.getElementById('not')
+const not1 = document.getElementById('not1')
+const not2 = document.getElementById('not2')
 const all = document.getElementById('all')
 const exists = document.getElementById('exists')
 const congrats = document.getElementById('congrats')
@@ -292,8 +293,9 @@ function clickTrue() {
     } else if (n==0 && l==3) {
         backButton.classList.add('hide')
         nextButton.classList.remove('hide')
+        not1.classList.remove('hide')
     } else if (n==1 && l==3) {
-        not.classList.remove('hide')
+        not2.classList.remove('hide')
         nextLevel.classList.remove('hide')
     } else if (n==0 && l==4) {
         backButton.classList.add('hide')
@@ -1099,6 +1101,7 @@ function goNext() {
         correct.classList.add('hide')
         nextButton.classList.add('hide')
         helpButton.classList.remove('hide')
+        not1.classList.add('hide')
     } else if (n==1 && l==4) {
         container.classList.remove('hide')
         answerButtons.classList.remove('hide')
@@ -1959,7 +1962,8 @@ function goBack() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
-        not.classList.add('hide')
+        not1.classList.add('hide')
+        not2.classList.add('hide')
         nextLevel.classList.add('hide')
         redoLevel.classList.add('hide')
     } else if (depth == 3 && m == 1 && l == 4) {
@@ -2267,7 +2271,8 @@ function incLevel() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
-        not.classList.add('hide')
+        not1.classList.add('hide')
+        not2.classList.add('hide')
         playLevel4()
     } else if (l==4) {
         n = 0
@@ -2452,7 +2457,8 @@ function redo() {
         container.classList.remove('wrong')
         correct.classList.add('hide')
         incorrect.classList.add('hide')
-        not.classList.add('hide')
+        not1.classList.add('hide')
+        not2.classList.add('hide')
         nextLevel.classList.add('hide')
         redoLevel.classList.add('hide')
         playLevel3()

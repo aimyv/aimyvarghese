@@ -260,7 +260,7 @@ body {
   display: block;
   background-color: var(--grey);
   color: white;
-  border-radius: 5px;
+  border-radius: 7.5px;
   border-color: white;
   border-width: 1px;
   border-style: solid;
@@ -282,7 +282,8 @@ body {
 #dm4,
 #and,
 #or,
-#not,
+#not1,
+#not2,
 #all,
 #exists,
 #modeInstruction,
@@ -315,7 +316,7 @@ body {
 #congrats {
   color: white;
   margin-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .levels {
@@ -421,7 +422,9 @@ body {
 #easy,
 #medium,
 #hard {
-  font-size: 120%;
+  font-size: 200%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #help-btn {
