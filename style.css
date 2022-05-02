@@ -417,6 +417,19 @@ body {
   margin-right: 10px;
 }
 
+#start-btn,
+#easy,
+#medium,
+#hard {
+  font-size: 120%;
+}
+
+#help-btn {
+  border-color: white;
+  color: white;
+  background-color: var(--orange);
+}
+
 #question1,
 #question2,
 #question3,
