@@ -381,6 +381,7 @@ body {
 
 #back-btn:hover,
 #next-btn:hover,
+#redoLevel:hover,
 #nextLevel:hover,
 #help-btn:hover,
 #answer1:hover,
@@ -408,6 +409,7 @@ body {
 #back-btn,
 #next-btn,
 #nextLevel,
+#redoLevel,
 #help-btn {
   margin-left: 10px;
   margin-right: 10px;
