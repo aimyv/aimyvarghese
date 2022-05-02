@@ -381,6 +381,7 @@ body {
 
 #back-btn:hover,
 #next-btn:hover,
+#nextLevel:hover,
 #help-btn:hover,
 #answer1:hover,
 #answer2:hover,
@@ -406,6 +407,7 @@ body {
 
 #back-btn,
 #next-btn,
+#nextLevel,
 #help-btn {
   margin-left: 10px;
   margin-right: 10px;
