@@ -311,9 +311,11 @@ body {
 #falseResult17opt2,
 #falseResult18,
 #correct,
-#incorrect {
+#incorrect,
+#congrats {
   color: white;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .levels {

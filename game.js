@@ -7,6 +7,7 @@ const or = document.getElementById('or')
 const not = document.getElementById('not')
 const all = document.getElementById('all')
 const exists = document.getElementById('exists')
+const congrats = document.getElementById('congrats')
 
 const backButton = document.getElementById('back-btn')
 const nextButton = document.getElementById('next-btn')
@@ -1844,6 +1845,7 @@ function goNext() {
         trueResult18.classList.remove('hide')
         nextButton.classList.add('hide')
         nextLevel.classList.add('hide')
+        congrats.classList.remove('hide')
     } else if (n==5 && l==18 && option==1) {
         question18fopt1.classList.add('hide')
         question18gopt1.classList.remove('hide')
@@ -2227,6 +2229,7 @@ function goBack() {
         container.classList.remove('wrong')
         helpButton.classList.add('hide')
         redoLevel.classList.add('hide')
+        congrats.classList.add('hide')
 
         depth -= 1
         l -= 18
@@ -2647,6 +2650,7 @@ function redo() {
         container.classList.remove('wrong')
         helpButton.classList.add('hide')
         redoLevel.classList.add('hide')
+        congrats.classList.add('hide')
         playLevel18()
     }
 }
